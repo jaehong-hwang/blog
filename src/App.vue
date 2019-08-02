@@ -1,18 +1,29 @@
 <template>
   <div id="app">
-    <router-view/>
+    <app-header />
+    <section class="app-body">
+      <router-view/>
+    </section>
+    <app-footer />
   </div>
 </template>
 
 <script>
+import AppHeader from '@/components/Layout/AppHeader'
+import AppFooter from '@/components/Layout/AppFooter'
+
 export default {
   name: '',
+  components: {
+    AppHeader,
+    AppFooter,
+  },
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
