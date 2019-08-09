@@ -2,7 +2,7 @@
   <b-navbar>
     <template slot="brand">
       <b-navbar-item href="/">
-        <h1>BANGGUSEOK</h1>
+        <h1>방구석연구소</h1>
       </b-navbar-item>
     </template>
     <template slot="end">
