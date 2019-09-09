@@ -18,16 +18,18 @@ export default {
     loaded: -1,
   }),
   created() {
-    this.images.forEach((key, imageLink) => {
-      const img = new Image()
-      img.src = imageLink
-      img.onload = () => {
-        if (this.loaded >= key) {
-          console.log(imageLink)
-          this.imageLink = imageLink
-          this.loaded = key
+    this.images.forEach((imageLink, key) => {
+      setTimeout(() => {
+        const img = new Image()
+        img.src = imageLink
+        img.onload = () => {
+          if (this.loaded <= key) {
+            console.log(key, imageLink)
+            this.imageLink = imageLink
+            this.loaded = key
+          }
         }
-      }
+      }, key * 1000)
     })
   },
 }
